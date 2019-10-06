@@ -17,6 +17,17 @@ namespace Highland.Controllers
 
         [Authorize]
         [HttpGet("[action]")]
+        public Dictionary<int, string> CallApi()
+        {
+            var rng = new Random();
+            return new Dictionary<int, string>
+            {
+                {1, "Called from Starbucks server " + rng.Next(0, 100)}
+            };
+        }
+
+        [Authorize]
+        [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();

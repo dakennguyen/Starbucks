@@ -23,7 +23,7 @@ const ExternalApi = () => {
                 token = await getTokenSilently();
             }
             const response = await fetch(
-                "https://localhost:5001/api/SampleData/WeatherForecasts",
+                "https://localhost:5002/api/SampleData/CallApi",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
