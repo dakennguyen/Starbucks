@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Highland": {
+    "Starbucks": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

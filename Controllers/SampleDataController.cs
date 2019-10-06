@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Highland.Controllers
+namespace Starbucks.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
