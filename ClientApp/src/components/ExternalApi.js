@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuth0 } from "../react-auth0-wrapper";
+import Profile from './Profile';
 
 const ExternalApi = () => {
     const [showResult, setShowResult] = useState(false);
@@ -42,6 +43,7 @@ const ExternalApi = () => {
 
     return (
         <>
+            <Profile />
             <h1>External API</h1>
             {!isAuthenticated && (
                 <button onClick={() => loginWithRedirect({})}>Login</button>
