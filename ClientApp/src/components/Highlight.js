@@ -62,7 +62,7 @@ class Highlight extends Component {
 }
 
 Highlight.propTypes = {
-  children: PropTypes.node.isRequired,
+  //children: PropTypes.node.isRequired,
   language: PropTypes.string
 };
 

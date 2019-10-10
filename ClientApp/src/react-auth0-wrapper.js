@@ -25,6 +25,7 @@ export const Auth0Provider = ({
             if (window.location.search.includes("code=")) {
                 const { appState } = await auth0FromHook.handleRedirectCallback();
                 onRedirectCallback(appState);
+                localStorage.setItem('token', await auth0FromHook.getTokenSilently());
             }
 
             const isAuthenticated = await auth0FromHook.isAuthenticated();

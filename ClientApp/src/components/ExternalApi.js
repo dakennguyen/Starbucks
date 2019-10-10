@@ -6,23 +6,19 @@ const ExternalApi = () => {
     const [showResult, setShowResult] = useState(false);
     const [apiMessage, setApiMessage] = useState("");
     const {
-        isAuthenticated,
         logout,
-        loginWithRedirect,
-        getTokenSilently
+        loginWithRedirect
     } = useAuth0();
-    const logoutWithRedirect = () =>
+    const logoutWithRedirect = () => {
+        localStorage.removeItem('token');
         logout({
             returnTo: window.location.origin
         });
+    }
 
     const callApi = async () => {
         try {
-            var token = "";
-            if (isAuthenticated)
-            {
-                token = await getTokenSilently();
-            }
+            var token = localStorage.getItem('token');
             const response = await fetch(
                 "https://localhost:5002/api/SampleData/CallApi",
                 {
@@ -45,10 +41,10 @@ const ExternalApi = () => {
         <>
             <Profile />
             <h1>External API</h1>
-            {!isAuthenticated && (
+            {!localStorage.getItem('token') && (
                 <button onClick={() => loginWithRedirect({})}>Login</button>
             )}
-            {isAuthenticated && (
+            {localStorage.getItem('token') && (
                 <button onClick={() => logoutWithRedirect()}>Logout</button>
             )}
             <button onClick={callApi}>Ping API</button>
