@@ -1,11 +1,12 @@
 import React from "react";
-import { useAuth0 } from "../react-auth0-wrapper";
+import decodeJWT from 'jwt-decode';
 import Highlight from './Highlight';
 
 const Profile = () => {
-    const { user } = useAuth0();
+    var token = localStorage.getItem('token');
+    if (!token) return;
     return (
-        <Highlight>{JSON.stringify(user, null, 2)}</Highlight>
+        <Highlight>{JSON.stringify(decodeJWT(token), null, 2)}</Highlight>
     );
 }
 
