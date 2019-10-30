@@ -4,7 +4,7 @@ import Highlight from './Highlight';
 
 const Profile = () => {
     var token = localStorage.getItem('token');
-    if (!token) return;
+    if (!token) return <Highlight></Highlight>;
     return (
         <Highlight>{JSON.stringify(decodeJWT(token), null, 2)}</Highlight>
     );

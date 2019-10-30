@@ -40,7 +40,7 @@ const ExternalApi = () => {
 
     return (
         <>
-            <Profile />
+            {isAuthenticated && <Profile />}
             <h1>External API</h1>
             {!isAuthenticated && (
                 <button onClick={() => loginWithRedirect({})}>Login</button>
