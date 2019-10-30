@@ -6,6 +6,7 @@ const ExternalApi = () => {
     const [showResult, setShowResult] = useState(false);
     const [apiMessage, setApiMessage] = useState("");
     const {
+        isAuthenticated,
         logout,
         loginWithRedirect
     } = useAuth0();
@@ -41,10 +42,10 @@ const ExternalApi = () => {
         <>
             <Profile />
             <h1>External API</h1>
-            {!localStorage.getItem('token') && (
+            {!isAuthenticated && (
                 <button onClick={() => loginWithRedirect({})}>Login</button>
             )}
-            {localStorage.getItem('token') && (
+            {isAuthenticated && (
                 <button onClick={() => logoutWithRedirect()}>Logout</button>
             )}
             <button onClick={callApi}>Ping API</button>
