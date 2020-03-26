@@ -1,5 +1,5 @@
 {
-  "domain": "starbucks.eu.auth0.com",
-  "clientId": "YZYCp4ETxeI2BPwtgttszbRuuNsV6sRe",
-  "audience": "https://starbucks.eu.auth0.com/api/v2/"
+  "domain": "khoa-test.eu.auth0.com",
+  "clientId": "Wdm90eKE51HM01nrC2mlc8mTdyF2n5n4",
+  "audience": "https://khoa-test.eu.auth0.com/api/v2/"
 }

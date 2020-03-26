@@ -12,6 +12,7 @@ const ExternalApi = () => {
     } = useAuth0();
     const logoutWithRedirect = () => {
         localStorage.removeItem('token');
+        localStorage.setItem('isAuthen', false);
         logout({
             returnTo: window.location.origin
         });
