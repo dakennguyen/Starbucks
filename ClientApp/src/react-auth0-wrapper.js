@@ -29,6 +29,7 @@ export const Auth0Provider = ({
             }
 
             const isAuthenticated = await auth0FromHook.isAuthenticated();
+            localStorage.setItem('token', await auth0FromHook.getTokenSilently());
 
             setIsAuthenticated(isAuthenticated);
 
